@@ -3,25 +3,13 @@ package ro.uvt.info.designpatternslab.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Getter
-@Setter
 @NoArgsConstructor
-public class Author {
+public abstract class BaseElementEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    private String name;
-
-    public Author(String name) {
-        this.name = name;
-    }
-
-    public void print() {
-        System.out.println("Author: " + name);
-    }
 }
-

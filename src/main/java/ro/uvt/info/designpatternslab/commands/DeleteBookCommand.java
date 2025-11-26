@@ -17,4 +17,3 @@ public class DeleteBookCommand implements Command {
         return null;
     }
 }
-

@@ -1,6 +1,15 @@
 package ro.uvt.info.designpatternslab.models;
 
-public class Image implements Element {
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+public class Image extends BaseElementEntity implements Element {
     private String name;
 
     public Image(String name) {
@@ -9,17 +18,17 @@ public class Image implements Element {
 
     @Override
     public void add(Element element) {
-        throw new UnsupportedOperationException("Cannot add elements to a Image.");
+        throw new UnsupportedOperationException("Cannot add elements to an Image.");
     }
 
     @Override
     public void remove(Element element) {
-        throw new UnsupportedOperationException("Cannot remove elements from a Image.");
+        throw new UnsupportedOperationException("Cannot remove elements from an Image.");
     }
 
     @Override
     public Element get(int index) {
-        throw new UnsupportedOperationException("Cannot get elements from a Image.");
+        throw new UnsupportedOperationException("Cannot get elements from an Image.");
     }
 
     @Override
@@ -27,4 +36,3 @@ public class Image implements Element {
         System.out.println("Image: " + name);
     }
 }
-

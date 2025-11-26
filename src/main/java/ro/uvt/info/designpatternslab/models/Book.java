@@ -1,45 +1,41 @@
 package ro.uvt.info.designpatternslab.models;
 
+import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Book {
-    @Setter
-    @Getter
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String title;
-    private List<Author> authors;
-    private List<Element> contents;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "book_author",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "author_id")
+    )
+    private List<Author> authors = new ArrayList<>();
+
+    // FIXED: OneToMany relationship with elements
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "book_id")
+    private List<BaseElementEntity> elements = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
-        this.authors = new ArrayList<>();
-        this.contents = new ArrayList<>();
     }
-
-    public Book() {
-    }
-
-    public void addAuthor(Author author) {
-        authors.add(author);
-    }
-
-    public void addContent(Element element) {
-        contents.add(element);
-    }
-
-    public void print() {
-        System.out.println("Book: " + title);
-        System.out.println("Authors:");
-        for (Author author : authors) {
-            author.print();
-        }
-        for (Element element : contents) {
-            element.print();
-        }
-    }
-
 }

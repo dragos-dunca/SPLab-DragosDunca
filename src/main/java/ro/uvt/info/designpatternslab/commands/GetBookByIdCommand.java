@@ -16,4 +16,3 @@ public class GetBookByIdCommand implements Command {
         return service.get(id);
     }
 }
-

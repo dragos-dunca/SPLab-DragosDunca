@@ -19,4 +19,3 @@ public class UpdateBookCommand implements Command {
         return service.update(id, book);
     }
 }
-

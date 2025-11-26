@@ -14,4 +14,3 @@ public class GetAllBooksCommand implements Command {
         return service.getAll();
     }
 }
-

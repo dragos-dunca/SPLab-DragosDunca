@@ -1,6 +1,15 @@
 package ro.uvt.info.designpatternslab.models;
 
-public class Table implements Element {
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+public class Table extends BaseElementEntity implements Element {
     private String title;
 
     public Table(String title) {
@@ -27,4 +36,3 @@ public class Table implements Element {
         System.out.println("Table: " + title);
     }
 }
-

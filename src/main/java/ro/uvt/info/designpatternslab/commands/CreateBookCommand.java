@@ -17,4 +17,3 @@ public class CreateBookCommand implements Command {
         return service.create(book);
     }
 }
-

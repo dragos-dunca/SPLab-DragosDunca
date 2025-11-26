@@ -1,9 +1,19 @@
 package ro.uvt.info.designpatternslab.models;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import ro.uvt.info.designpatternslab.strategy.AlignStrategy;
 
-public class Paragraph implements Element {
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+public class Paragraph extends BaseElementEntity implements Element {
     private String text;
+
+    @Transient
     private AlignStrategy strategy;
 
     public Paragraph(String text) {
@@ -38,4 +48,3 @@ public class Paragraph implements Element {
         }
     }
 }
-
