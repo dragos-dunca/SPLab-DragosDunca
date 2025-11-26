@@ -1,6 +1,8 @@
-package ro.uvt.info.designpatternslab;
+package ro.uvt.info.designpatternslab.models;
 
-public class Paragraph implements Element{
+import ro.uvt.info.designpatternslab.strategy.AlignStrategy;
+
+public class Paragraph implements Element {
     private String text;
     private AlignStrategy strategy;
 

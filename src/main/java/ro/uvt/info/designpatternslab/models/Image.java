@@ -1,6 +1,6 @@
-package ro.uvt.info.designpatternslab;
+package ro.uvt.info.designpatternslab.models;
 
-public class Image implements Element{
+public class Image implements Element {
     private String name;
 
     public Image(String name) {

@@ -1,9 +1,15 @@
-package ro.uvt.info.designpatternslab;
+package ro.uvt.info.designpatternslab.models;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
+    @Setter
+    @Getter
+    private Integer id;
     private String title;
     private List<Author> authors;
     private List<Element> contents;
@@ -12,6 +18,9 @@ public class Book {
         this.title = title;
         this.authors = new ArrayList<>();
         this.contents = new ArrayList<>();
+    }
+
+    public Book() {
     }
 
     public void addAuthor(Author author) {
@@ -32,4 +41,5 @@ public class Book {
             element.print();
         }
     }
+
 }

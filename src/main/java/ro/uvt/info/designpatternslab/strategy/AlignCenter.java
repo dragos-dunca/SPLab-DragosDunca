@@ -1,4 +1,4 @@
-package ro.uvt.info.designpatternslab;
+package ro.uvt.info.designpatternslab.strategy;
 
 public class AlignCenter implements AlignStrategy {
     @Override

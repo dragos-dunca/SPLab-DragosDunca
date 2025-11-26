@@ -1,7 +1,12 @@
 package ro.uvt.info.designpatternslab;
 
+import ro.uvt.info.designpatternslab.strategy.AlignCenter;
+import ro.uvt.info.designpatternslab.strategy.AlignLeft;
+import ro.uvt.info.designpatternslab.strategy.AlignRight;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import ro.uvt.info.designpatternslab.models.Paragraph;
+import ro.uvt.info.designpatternslab.models.Section;
 
 @SpringBootApplication
 public class DesignPatternsLabApplication {

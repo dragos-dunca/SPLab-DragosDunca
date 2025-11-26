@@ -1,6 +1,6 @@
-package ro.uvt.info.designpatternslab;
+package ro.uvt.info.designpatternslab.models;
 
-public class Table implements Element{
+public class Table implements Element {
     private String title;
 
     public Table(String title) {

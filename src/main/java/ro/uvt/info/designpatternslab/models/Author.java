@@ -1,4 +1,4 @@
-package ro.uvt.info.designpatternslab;
+package ro.uvt.info.designpatternslab.models;
 
 public class Author {
     private String name;

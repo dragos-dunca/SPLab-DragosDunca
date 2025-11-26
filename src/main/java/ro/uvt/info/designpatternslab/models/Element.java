@@ -1,4 +1,4 @@
-package ro.uvt.info.designpatternslab;
+package ro.uvt.info.designpatternslab.models;
 
 public interface Element {
     void add(Element element);
